@@ -6,14 +6,18 @@ function getRandomDog() {
             console.log('Data received from API:', data);
             if (data.message && data.status === 'success') {
                 const container = document.querySelector("#dogs-container");
-                container.innerHTML = ''; 
+                container.innerHTML = '';
                 const card = document.createElement("div");
                 card.classList.add("card");
+                const link = document.createElement("a");
+                link.setAttribute('href', '#');
+                link.classList.add("galeria");
                 const img = document.createElement("img");
-                img.src = data.message; 
+                img.src = data.message;
                 const titulo = document.createElement("h3");
-                titulo.textContent = "Dog Image"; 
-                card.appendChild(img);
+                titulo.textContent = "Dog Image";
+                link.appendChild(img);
+                card.appendChild(link);
                 card.appendChild(titulo);
                 container.appendChild(card);
             } else {
@@ -36,11 +40,15 @@ function getThreeRandomDogs() {
                 data.message.forEach(imageUrl => {
                     const card = document.createElement("div");
                     card.classList.add("card");
+                    const link = document.createElement("a");
+                    link.setAttribute('href', '#');
+                    link.classList.add("galeria");
                     const img = document.createElement("img");
-                    img.src = imageUrl; 
+                    img.src = imageUrl;
                     const titulo = document.createElement("h3");
-                    titulo.textContent = "Dog Image"; 
-                    card.appendChild(img);
+                    titulo.textContent = "Dog Image";
+                    link.appendChild(img);
+                    card.appendChild(link);
                     card.appendChild(titulo);
                     container.appendChild(card);
                 });
@@ -60,15 +68,19 @@ function getAllDogs() {
             console.log('Data received from API:', data);
             if (Array.isArray(data.message) && data.status === 'success') {
                 const container = document.querySelector("#dogs-container3");
-                container.innerHTML = ''; 
+                container.innerHTML = '';
                 data.message.forEach(imageUrl => {
                     const card = document.createElement("div");
                     card.classList.add("card");
+                    const link = document.createElement("a");
+                    link.setAttribute('href', '#');
+                    link.classList.add("galeria");
                     const img = document.createElement("img");
-                    img.src = imageUrl; 
+                    img.src = imageUrl;
                     const titulo = document.createElement("h3");
-                    titulo.textContent = "Dog Image"; 
-                    card.appendChild(img);
+                    titulo.textContent = "Dog Image";
+                    link.appendChild(img);
+                    card.appendChild(link);
                     card.appendChild(titulo);
                     container.appendChild(card);
                 });
@@ -80,6 +92,21 @@ function getAllDogs() {
             console.error('Error fetching dog data:', error);
         });
 }
-
-
 getRandomDog()
+
+
+// starting Jquery
+$(document).ready(function () {
+
+    $(document).on('click', ".galeria", function (event){
+        event.preventDefault();
+        const imgSrc = $(this).find('img').attr('src')
+        $('.container-box-shadow').fadeIn('slow')
+        $('.container-box-image').fadeIn('slow')
+        $("#img").attr('src', imgSrc);
+    });
+    $('.close').on('click', function () {
+        $('.container-box-shadow').fadeOut('slow')
+        $('.container-box-image').fadeOut('slow')
+    })
+});
