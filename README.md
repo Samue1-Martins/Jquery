@@ -4,7 +4,9 @@
   A Dog Gallery é uma landing page para uma galeria de cachorros.<br>
   Ela utiliza JavaScript e jQuery para carregar imagens de cachorros a partir de uma API, exibir as imagens em destaque <br> quando clicadas, e proporcionar uma experiência de usuário interativa com efeitos e animações.
 
-<img src = "https://github.com/Samue1-Martins/Jquery/assets/125680404/60232253-73b2-4f30-9e91-fc3819621012">
+<img src = "https://github.com/Samue1-Martins/Jquery/assets/125680404/60232253-73b2-4f30-9e91-fc3819621012" height = '468px'>
+<img src = "https://github.com/Samue1-Martins/Jquery/assets/125680404/e89c88a6-0213-4b9f-94c1-60c173d969be" height = '600px'>
+<img src = "https://github.com/Samue1-Martins/Jquery/assets/125680404/fe552832-e25f-4f7e-913a-5b98f881081c" height = '600px'>
 
 ## Tecnologias utilizadas
 
