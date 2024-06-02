@@ -1,4 +1,4 @@
-
+// Requisições da ApiDog
 function getRandomDog() {
     fetch('https://dog.ceo/api/breeds/image/random')
         .then(response => response.json())
@@ -17,8 +17,7 @@ function getRandomDog() {
                 const titulo = document.createElement("h3");
                 titulo.textContent = "Dog Image";
                 link.appendChild(img);
-                card.appendChild(link);
-                card.appendChild(titulo);
+                card.appendChild(link)
                 container.appendChild(card);
             } else {
                 console.error('Unexpected response structure:', data);
@@ -49,7 +48,6 @@ function getThreeRandomDogs() {
                     titulo.textContent = "Dog Image";
                     link.appendChild(img);
                     card.appendChild(link);
-                    card.appendChild(titulo);
                     container.appendChild(card);
                 });
             } else {
@@ -81,7 +79,6 @@ function getAllDogs() {
                     titulo.textContent = "Dog Image";
                     link.appendChild(img);
                     card.appendChild(link);
-                    card.appendChild(titulo);
                     container.appendChild(card);
                 });
             } else {
@@ -92,21 +89,30 @@ function getAllDogs() {
             console.error('Error fetching dog data:', error);
         });
 }
+
 getRandomDog()
 
 
 // starting Jquery
-$(document).ready(function () {
 
+// Função que coloca a imagem em destaque no Html
+$(document).ready(function () {
     $(document).on('click', ".galeria", function (event){
         event.preventDefault();
-        const imgSrc = $(this).find('img').attr('src')
-        $('.container-box-shadow').fadeIn('slow')
-        $('.container-box-image').fadeIn('slow')
+        const imgSrc = $(this).find('img').attr('src');
+        $('.container-box-shadow').fadeIn('slow');
+        $('.container-box-image').fadeIn('slow');
         $("#img").attr('src', imgSrc);
     });
-    $('.close').on('click', function () {
-        $('.container-box-shadow').fadeOut('slow')
-        $('.container-box-image').fadeOut('slow')
+    $(".container-box-shadow").on('click', function(){
+        $(this).fadeOut('slow');
+        $('.container-box-image').fadeOut('slow');
+    });
+    $('.container-box-image').on('click', function(event){
+        event.stopPropagatio();
     })
+    $('.close').on('click', function () {
+        $('.container-box-shadow').fadeOut('slow');
+        $('.container-box-image').fadeOut('slow');
+    });
 });
