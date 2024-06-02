@@ -4,11 +4,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>For All Dogs</title>
+    <title> Dog Gallery</title>
     <script src="https://code.jquery.com/jquery-3.7.1.min.js"
         integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="style/style.css">
     <link href="https://fonts.googleapis.com/css2?family=LXGW+WenKai+TC&display=swap" rel="stylesheet">
+    <link rel="icon" href="images/logo.png">
 </head>
 
 <body>
@@ -16,24 +17,22 @@
         <div class="nav-bar">
             <div>
                 <h3 id="titulo">
-                    Dog gallery
+                    Dog Gallery
                 </h3>
                 <img src="images/logo.png" alt="">
             </div>
         </div>
     </header>
+
     <main>
         <section id="main-section-1">
             <div class="main-text">
                 <p>
                     Uma galeria feita para você encher seu coração de fofura com fotos aletórias destes doguinhos ❤️🐕
                 </p>
-
             </div>
             <div class="main-dogs">
                 <div class="container" id="dogs-container">
-                    <!-- <div class="card">
-                    </div> -->
                 </div>
                 <div class="container-buttons">
                     <button onclick="getRandomDog()">
@@ -48,21 +47,13 @@
                 </div>
             </div>
             <div>
-                <div class="container" id="dogs-container2">
-                    <!-- <div class="card">
-                    </div> -->
-                </div>
+                <div class="container" id="dogs-container2"></div>
             </div>
             <div>
-                <div class="container" id="dogs-container2">
-                    <!-- <div class="card">
-                    </div> -->
-                </div>
+                <div class="container" id="dogs-container2"></div>
             </div>
         </section>
-
         <section id="main-section-2">
-            <!-- background transparente -->
             <div>
                 <div class="container-box-shadow"></div>
                 <div class="container-box-image">
@@ -72,21 +63,25 @@
             </div>
             <button id="backToTop">Voltar para o topo ⬆️</button>
         </section>
-
     </main>
+
     <footer>
-        <section id="footer-section">
+        <section>
             <div class="footer-section">
-                <h3 id="titulo">
-                    Dog gallery
-                </h3>
-                <img src="images/logo.png" alt="">
+                <div>
+                    <h3 id="titulo">
+                        Dog Gallery
+                    </h3>
+                    <img src="images/logo.png" alt="">
+                </div>
             </div>
-            <p>© 2024 - Minha Galeria de Cachorros</p>
+            <div>
+                <p>© 2024 - Galeria de Cachorros</p>
+            </div>
         </section>
     </footer>
 </body>
-<script src="javaScript/index.js">
-</script>
+
+<script src="javaScript/index.js"></script>
 
 </html>

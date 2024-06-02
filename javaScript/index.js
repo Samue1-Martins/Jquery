@@ -10,11 +10,9 @@ function getRandomDog() {
                 card.classList.add("card");
                 const link = document.createElement("a");
                 link.setAttribute('href', '#');
-                link.classList.add("galeria");
+                link.classList.add("gallery");
                 const img = document.createElement("img");
                 img.src = data.message;
-                const titulo = document.createElement("h3");
-                titulo.textContent = "Dog Image";
                 link.appendChild(img);
                 card.appendChild(link)
                 container.appendChild(card);
@@ -44,11 +42,9 @@ function getThreeRandomDogs() {
                     card.classList.add("card");
                     const link = document.createElement("a");
                     link.setAttribute('href', '#');
-                    link.classList.add("galeria");
+                    link.classList.add("gallery");
                     const img = document.createElement("img");
                     img.src = imageUrl;
-                    const titulo = document.createElement("h3");
-                    titulo.textContent = "Dog Image";
                     link.appendChild(img);
                     card.appendChild(link);
                     container.appendChild(card);
@@ -75,11 +71,9 @@ function getAllDogs() {
                     card.classList.add("card");
                     const link = document.createElement("a");
                     link.setAttribute('href', '#');
-                    link.classList.add("galeria");
+                    link.classList.add("gallery");
                     const img = document.createElement("img");
                     img.src = imageUrl;
-                    const titulo = document.createElement("h3");
-                    titulo.textContent = "Dog Image";
                     link.appendChild(img);
                     card.appendChild(link);
                     container.appendChild(card);
@@ -94,7 +88,7 @@ function getAllDogs() {
 }
 
 $(document).ready(function () {
-    $(document).on('click', ".galeria", function (event) {
+    $(document).on('click', ".gallery", function (event) {
         event.preventDefault();
 
         const imgSrc = $(this).find('img').attr('src');
@@ -119,7 +113,7 @@ $(document).ready(function () {
 
     const backToTopButton = $('#backToTop');
     $(window).scroll(function(){
-        if ($(window).scrollTop() > 20){
+        if ($(window).scrollTop() > 800){
             backToTopButton.fadeIn();
         }else{
             backToTopButton.fadeOut();
