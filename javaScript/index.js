@@ -1,4 +1,3 @@
-// Requisições da ApiDog
 function getRandomDog() {
     fetch('https://dog.ceo/api/breeds/image/random')
         .then(response => response.json())
@@ -28,13 +27,17 @@ function getRandomDog() {
         });
 }
 
+document.addEventListener("DOMContentLoaded", function(){
+    getRandomDog()
+})
+
 function getThreeRandomDogs() {
     fetch('https://dog.ceo/api/breeds/image/random/3')
         .then(response => response.json())
         .then(data => {
             console.log('Data received from API:', data);
             if (Array.isArray(data.message) && data.status === 'success') {
-                const container = document.querySelector("#dogs-container3");
+                const container = document.querySelector("#dogs-container2");
                 container.innerHTML = '';
                 data.message.forEach(imageUrl => {
                     const card = document.createElement("div");
@@ -65,7 +68,7 @@ function getAllDogs() {
         .then(data => {
             console.log('Data received from API:', data);
             if (Array.isArray(data.message) && data.status === 'success') {
-                const container = document.querySelector("#dogs-container3");
+                const container = document.querySelector("#dogs-container2");
                 container.innerHTML = '';
                 data.message.forEach(imageUrl => {
                     const card = document.createElement("div");
@@ -90,29 +93,39 @@ function getAllDogs() {
         });
 }
 
-getRandomDog()
-
-
-// starting Jquery
-
-// Função que coloca a imagem em destaque no Html
 $(document).ready(function () {
-    $(document).on('click', ".galeria", function (event){
+    $(document).on('click', ".galeria", function (event) {
         event.preventDefault();
+
         const imgSrc = $(this).find('img').attr('src');
         $('.container-box-shadow').fadeIn('slow');
         $('.container-box-image').fadeIn('slow');
         $("#img").attr('src', imgSrc);
     });
-    $(".container-box-shadow").on('click', function(){
+
+    $(".container-box-shadow").on('click', function () {
         $(this).fadeOut('slow');
         $('.container-box-image').fadeOut('slow');
     });
-    $('.container-box-image').on('click', function(event){
-        event.stopPropagatio();
-    })
+
+    $('.container-box-image').on('click', function (event) {
+        event.stopPropagation();
+    });
+
     $('.close').on('click', function () {
         $('.container-box-shadow').fadeOut('slow');
         $('.container-box-image').fadeOut('slow');
     });
+
+    const backToTopButton = $('#backToTop');
+    $(window).scroll(function(){
+        if ($(window).scrollTop() > 20){
+            backToTopButton.fadeIn();
+        }else{
+            backToTopButton.fadeOut();
+        }
+    })
+    backToTopButton.on('click', function(){
+        $('html, body').animate({scrollTop: 0 }, 'slow' );
+    })
 });
